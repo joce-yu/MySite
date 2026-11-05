@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judy | 全端軟體工程師 Full-Stack Engineer (C# / ASP.NET MVC / 前端開發)</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Judy 是擁有 4 年實戰經驗的全端軟體工程師，專長於 C#、ASP.NET MVC 後端與 HTML/CSS/JavaScript 前端開發，擅長 POS 軟體授權控制與線上金流自動延展系統整合。">
+    <meta name="keywords" content="全端工程師, 軟體工程師, C#, ASP.NET MVC, JavaScript, HTML, CSS, POS授權系統, 線上金流串接, Judy履歷, Full-Stack Developer">
+    <meta name="author" content="Judy">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://judy-dev-portfolio.example.com/">
+    <link rel="alternate" hreflang="zh-TW" href="https://judy-dev-portfolio.example.com/">
+
+    <!-- Open Graph (OG) Meta Tags for Social & GEO -->
+    <meta property="og:title" content="Judy | 全端軟體工程師 (C# / ASP.NET MVC / 前端)">
+    <meta property="og:description" content="4 年全端開發經驗，專精 C#、ASP.NET MVC、JavaScript 與 POS 金流自動授權延展系統。">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://i.pinimg.com/1200x/b9/66/47/b9664785e142cf407c845fa3f6f3d6c2.jpg">
+    <meta property="og:url" content="https://judy-dev-portfolio.example.com/">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Judy | 全端軟體工程師 Portfolio">
+    <meta name="twitter:description" content="專注於 C#、ASP.NET MVC 與前端 JavaScript/CSS/HTML 技術，提供穩健授權與金流系統解決方案。">
+    <meta name="twitter:image" content="https://i.pinimg.com/1200x/b9/66/47/b9664785e142cf407c845fa3f6f3d6c2.jpg">
+
+    <!-- JSON-LD Structured Data (GEO / AEO / SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://judy-dev-portfolio.example.com/#person",
+          "name": "Judy",
+          "jobTitle": "Full-Stack Software Engineer (全端軟體工程師)",
+          "description": "擁有 4 年經驗的全端軟體工程師，擅長 C#、ASP.NET MVC、JavaScript、HTML 及 CSS，專長於 POS 授權控制與線上金流自動延展系統開發。",
+          "image": "https://i.pinimg.com/1200x/b9/66/47/b9664785e142cf407c845fa3f6f3d6c2.jpg",
+          "sameAs": [
+            "https://www.facebook.com/ohyeahpetsofficial",
+            "https://www.instagram.com/tseng_pets_ohyeah/",
+            "https://www.threads.com/@tseng_pets_ohyeah",
+            "https://www.youtube.com/@petstsengisme"
+          ],
+          "knowsAbout": [
+            "C#",
+            "ASP.NET MVC",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "POS License Systems",
+            "Payment Gateway Integration",
+            "Full-Stack Web Development"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://judy-dev-portfolio.example.com/#website",
+          "url": "https://judy-dev-portfolio.example.com/",
+          "name": "Judy 全端軟體工程師 個人履歷",
+          "author": { "@id": "https://judy-dev-portfolio.example.com/#person" },
+          "inLanguage": "zh-TW"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://judy-dev-portfolio.example.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Judy 的主要核心開發技術是什麼？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Judy 具備 4 年全端軟體工程師經驗，後端主攻 C# 與 ASP.NET MVC，前端使用 HTML、CSS 及 JavaScript，具備資料庫設計與 API 串接實務能力。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Judy 在 POS 與金流系統上有哪些專案經驗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Judy 曾獨立與團隊合作打造『POS 線上授權與自動延展付款系統』，負責管控 POS 終端軟體驗證，並結合線上付款成功事件自動展延 POS 使用授權。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* CSS 變數定義深淺配色 */
+        :root {
+            --bg-main: #0a0f1d;
+            --bg-card: #111827;
+            --bg-card-sub: #1f2937;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --grid-color: rgba(255, 255, 255, 0.03);
+            --header-bg: rgba(10, 15, 29, 0.85);
+        }
+
+        .light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-sub: #f1f5f9;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --grid-color: rgba(15, 23, 42, 0.04);
+            --header-bg: rgba(248, 250, 252, 0.85);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-card {
+            background-color: var(--bg-card);
+            border-color: var(--border-color);
+        }
+
+        .theme-card-sub {
+            background-color: var(--bg-card-sub);
+            border-color: var(--border-color);
+        }
+
+        .theme-header {
+            background-color: var(--header-bg);
+            border-color: var(--border-color);
+        }
+
+        .theme-text-muted {
+            color: var(--text-muted);
+        }
+
+        /* 背景網格圖案 */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+            border-radius: 1rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            filter: blur(8px);
+        }
+        .glow-effect:hover::before {
+            opacity: 0.6;
+        }
+
+        /* 淡入動畫樣式 */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 音樂等化器跳動動畫 */
+        .wave-bar {
+            width: 3px;
+            height: 12px;
+            background-color: #3b82f6;
+            border-radius: 3px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        .wave-bar:nth-child(2) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 100% { height: 4px; }
+            50% { height: 16px; }
+        }
+        .paused .wave-bar {
+            animation: none;
+            height: 4px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- 背景音訊標籤 -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放器。
+    </audio>
+
+    <!-- 頂部 Sticky 導覽列 -->
+    <header class="sticky top-0 z-50 backdrop-blur-md theme-header border-b transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#hero" class="text-xl font-bold tracking-tight flex items-center gap-2 group">
+                    <span class="p-2 bg-brand-600/20 text-brand-400 rounded-lg group-hover:bg-brand-600 group-hover:text-white transition-all">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </span>
+                    <span class="bg-gradient-to-r from-brand-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent font-extrabold">
+                        Judy.Dev
+                    </span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#about" class="theme-text-muted hover:text-brand-400 transition-colors">關於我</a>
+                    <a href="#skills" class="theme-text-muted hover:text-brand-400 transition-colors">核心技術</a>
+                    <a href="#projects" class="theme-text-muted hover:text-brand-400 transition-colors">重點專案</a>
+                    <a href="#socials" class="theme-text-muted hover:text-brand-400 transition-colors">社群頻道</a>
+                    <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-all shadow-lg shadow-brand-600/20">
+                        聯繫我
+                    </a>
+
+                    <!-- Mode Toggle -->
+                    <button id="theme-toggle" class="p-2.5 rounded-xl theme-card border hover:border-brand-500/50 transition-all flex items-center justify-center" aria-label="Toggle Theme">
+                        <i data-lucide="sun" id="theme-sun-icon" class="w-4 h-4 text-amber-400 hidden"></i>
+                        <i data-lucide="moon" id="theme-moon-icon" class="w-4 h-4 text-indigo-400"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Header Right Actions -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg theme-card border" aria-label="Toggle Theme">
+                        <i data-lucide="sun" id="theme-sun-icon-m" class="w-5 h-5 text-amber-400 hidden"></i>
+                        <i data-lucide="moon" id="theme-moon-icon-m" class="w-5 h-5 text-indigo-400"></i>
+                    </button>
+
+                    <button id="menu-btn" class="p-2 theme-text-muted hover:text-brand-400 focus:outline-none" aria-label="Toggle Menu">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-gray-800 theme-card backdrop-blur-lg px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium theme-text-muted hover:bg-brand-500/10">關於我</a>
+            <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium theme-text-muted hover:bg-brand-500/10">核心技術</a>
+            <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium theme-text-muted hover:bg-brand-500/10">重點專案</a>
+            <a href="#socials" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium theme-text-muted hover:bg-brand-500/10">社群頻道</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-center bg-brand-600 text-white font-semibold shadow-md">聯繫我</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-12 pb-16 md:pt-24 md:pb-24 overflow-hidden bg-grid-pattern">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-brand-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs sm:text-sm font-medium mb-6">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            4 年資深全端工程經驗 | 隨時準備迎接新挑戰
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                            嗨，我是 Judy <br class="hidden sm:inline"/>
+                            <span class="bg-gradient-to-r from-brand-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+                                全端軟體工程師
+                            </span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg theme-text-muted max-w-2xl mb-8 leading-relaxed">
+                            專注於 <strong class="text-brand-500 font-semibold">C# / ASP.NET MVC</strong> 後端與現代前端 HTML、CSS、JavaScript 整合開發。具備 4 年扎實經驗，成功打造無人值守線上授權與 POS 金流自動延展機制。
+                        </p>
+
+                        <!-- Tech Badges -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-8 text-xs sm:text-sm">
+                            <span class="px-3 py-1.5 rounded-md theme-card-sub border font-medium">C#</span>
+                            <span class="px-3 py-1.5 rounded-md theme-card-sub border font-medium">ASP.NET MVC</span>
+                            <span class="px-3 py-1.5 rounded-md theme-card-sub border font-medium">JavaScript</span>
+                            <span class="px-3 py-1.5 rounded-md theme-card-sub border font-medium">HTML5 / CSS3</span>
+                            <span class="px-3 py-1.5 rounded-md theme-card-sub border font-medium">POS 授權與金流系統</span>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-8">
+                            <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-600/25">
+                                查看重點專案 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl theme-card-sub border hover:border-brand-500/50 font-semibold flex items-center justify-center gap-2 transition-all">
+                                與我聯繫
+                            </a>
+                        </div>
+
+                        <!-- Hero Social Icons -->
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs theme-text-muted font-medium mr-1">社群追蹤：</span>
+                            <a href="https://www.facebook.com/ohyeahpetsofficial" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl theme-card border hover:border-blue-500 hover:text-blue-500 transition-all" title="Facebook">
+                                <i data-lucide="facebook" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://www.instagram.com/tseng_pets_ohyeah/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl theme-card border hover:border-pink-500 hover:text-pink-500 transition-all" title="Instagram">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://www.threads.com/@tseng_pets_ohyeah" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl theme-card border hover:border-purple-500 hover:text-purple-500 transition-all" title="Threads">
+                                <i data-lucide="at-sign" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@petstsengisme" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl theme-card border hover:border-red-500 hover:text-red-500 transition-all" title="YouTube">
+                                <i data-lucide="youtube" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Hero Avatar Section -->
+                    <div class="lg:col-span-5 flex justify-center items-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 via-purple-500 to-indigo-500 rounded-3xl blur-lg opacity-70 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse"></div>
+                            
+                            <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-2 border-brand-500/30 theme-card shadow-2xl">
+                                <img src="https://i.pinimg.com/1200x/b9/66/47/b9664785e142cf407c845fa3f6f3d6c2.jpg" 
+                                     alt="Judy Profile Avatar" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/111827/60a5fa?text=Judy';"
+                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out" />
+                                
+                                <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl backdrop-blur-md theme-header border flex items-center justify-between text-xs">
+                                    <span class="flex items-center gap-2 font-medium">
+                                        <i data-lucide="code" class="w-4 h-4 text-brand-400"></i> Judy (Full-Stack)
+                                    </span>
+                                    <span class="text-emerald-500 font-semibold flex items-center gap-1">
+                                        <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 4 年年資
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 md:py-24 border-t border-gray-800/50 fade-in-section">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="md:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm tracking-wider uppercase">
+                            <i data-lucide="user" class="w-4 h-4"></i> About Me
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+                            兼具商業遠見與程式品質的工程師
+                        </h2>
+                        <p class="theme-text-muted leading-relaxed text-base sm:text-lg">
+                            在前一份工作擔任軟體工程師已滿 <strong class="text-brand-500">4 年經驗</strong>。我專注於建立自動化與穩健的後端控制邏輯，並結合精準的前端介面展示。
+                        </p>
+                        <p class="theme-text-muted leading-relaxed text-sm sm:text-base">
+                            我曾核心參與設計與維護線上授權與付款系統，實現 POS 軟體的授權嚴格管控，並串接線上金流系統，讓客戶於完成付款後可自動延展 POS 軟體授權，顯著降低人工處理的時間成本。
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl theme-card border">
+                                <div class="text-3xl font-extrabold text-brand-400 mb-1">4 年</div>
+                                <div class="text-xs sm:text-sm theme-text-muted">軟體工程實戰開發</div>
+                            </div>
+                            <div class="p-4 rounded-xl theme-card border">
+                                <div class="text-3xl font-extrabold text-emerald-400 mb-1">100%</div>
+                                <div class="text-xs sm:text-sm theme-text-muted">自動延展授權流暢度</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5">
+                        <div class="p-6 rounded-2xl theme-card border shadow-xl relative overflow-hidden group">
+                            <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://i.pinimg.com/1200x/b9/66/47/b9664785e142cf407c845fa3f6f3d6c2.jpg" 
+                                         alt="Mini Avatar" 
+                                         class="w-10 h-10 rounded-full object-cover border border-brand-500/50" />
+                                    <div>
+                                        <div class="text-sm font-semibold">Judy</div>
+                                        <div class="text-xs theme-text-muted font-mono">JudyProfile.cs</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                                </div>
+                            </div>
+
+                            <div class="font-mono text-xs sm:text-sm space-y-3 theme-text-muted">
+                                <div><span class="text-purple-400">public class</span> <span class="text-yellow-500">JudyEngineer</span></div>
+                                <div class="pl-4">{</div>
+                                <div class="pl-8"><span class="text-purple-400">public string</span> Role => <span class="text-emerald-500">"Full-Stack Developer"</span>;</div>
+                                <div class="pl-8"><span class="text-purple-400">public int</span> ExperienceYears => <span class="text-orange-400">4</span>;</div>
+                                <div class="pl-8"><span class="text-purple-400">public string[]</span> Frontend => <span class="text-purple-400">new</span>[] { <span class="text-emerald-500">"HTML", "CSS", "JavaScript"</span> };</div>
+                                <div class="pl-8"><span class="text-purple-400">public string[]</span> Backend => <span class="text-purple-400">new</span>[] { <span class="text-emerald-500">"C#", "ASP.NET MVC"</span> };</div>
+                                <div class="pl-8"><span class="text-purple-400">public string</span> Expertise => <span class="text-emerald-500">"POS License & Payment System"</span>;</div>
+                                <div class="pl-4">}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="skills" class="py-16 md:py-24 theme-card-sub border-t border-b fade-in-section">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm tracking-wider uppercase mb-2">
+                        <i data-lucide="layers" class="w-4 h-4"></i> Tech Stack
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">核心技術 Stack</h2>
+                    <p class="theme-text-muted mt-4 text-sm sm:text-base">前後端技術全方位涵蓋，專注於高效能、高擴充性與易維護之架構。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Backend -->
+                    <div class="p-6 rounded-2xl theme-card border hover:border-brand-500/50 transition-all glow-effect">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-6">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">後端與商業邏輯 (Back-End)</h3>
+                        <p class="theme-text-muted text-sm mb-6 leading-relaxed">運用物件導向程式設計，實現嚴謹且安全的服務端架構。</p>
+                        <ul class="space-y-2.5 text-sm">
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400"></i> C# 語言實務經驗</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400"></i> ASP.NET MVC 網站開展與營運</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400"></i> API 介面串接與安全權限控管</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400"></i> 資料庫邏輯設計與維護</li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="p-6 rounded-2xl theme-card border hover:border-brand-500/50 transition-all glow-effect">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">前端介面與體驗 (Front-End)</h3>
+                        <p class="theme-text-muted text-sm mb-6 leading-relaxed">靈活使用三大基礎技術，打造高效率、多終端相容之介面。</p>
+                        <ul class="space-y-2.5 text-sm">
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400"></i> JavaScript 邏輯運算與 DOM 操控</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400"></i> HTML5 語意化結構</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400"></i> CSS3 (Tailwind / 響應式切版 RWD)</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400"></i> AJAX / Fetch 非同步數據更新</li>
+                        </ul>
+                    </div>
+
+                    <!-- System Architecture -->
+                    <div class="p-6 rounded-2xl theme-card border hover:border-brand-500/50 transition-all glow-effect">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">系統整合與自動化</h3>
+                        <p class="theme-text-muted text-sm mb-6 leading-relaxed">擅長整合第三方服務，將重複流程自動化。</p>
+                        <ul class="space-y-2.5 text-sm">
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> POS 系統軟體授權演算機制</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> 線上金流串接與對帳機制</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> 自動化延展授權發放</li>
+                            <li class="flex items-center gap-2 theme-text-muted"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> 異常事件防護與日誌記錄</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-16 md:py-24 fade-in-section">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm tracking-wider uppercase mb-2">
+                            <i data-lucide="briefcase" class="w-4 h-4"></i> Project Experience
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">重點專案成果展示</h2>
+                    </div>
+                    <p class="theme-text-muted text-sm mt-2 md:mt-0 max-w-md">真實商業案例：自動化金流與 POS 授權延展解決方案。</p>
+                </div>
+
+                <div class="p-8 rounded-3xl theme-card border hover:border-gray-700 transition-all shadow-2xl relative overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        
+                        <div class="lg:col-span-7 space-y-6">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-semibold">C# / ASP.NET MVC</span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold">金流自動化</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-semibold">POS 授權管理</span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-bold">
+                                POS 授權控制與線上金流自動延展系統
+                            </h3>
+
+                            <p class="theme-text-muted leading-relaxed text-sm sm:text-base">
+                                在前 4 年的開發工作中，主導規劃此解決方案。成功讓 POS 門市終端軟體與雲端授權主機連動，提供無縫的付款與授權延續體驗。
+                            </p>
+
+                            <div class="space-y-4 pt-2">
+                                <div class="flex items-start gap-3">
+                                    <div class="p-2 rounded-lg theme-card-sub text-brand-400 shrink-0 mt-1">
+                                        <i data-lucide="key" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-base">安全授權邏輯控制</h4>
+                                        <p class="theme-text-muted text-sm">透過 Token 加密與 API 驗證機制，精準管控 POS 軟體有效期限與使用權限。</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="p-2 rounded-lg theme-card-sub text-emerald-400 shrink-0 mt-1">
+                                        <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-base">自動延展 POS 授權</h4>
+                                        <p class="theme-text-muted text-sm">串接線上付款機制，當系統接收到成功的金流回傳（Webhook）後，無須人工介入即刻重新生成並發送新授權碼。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 theme-card-sub p-6 rounded-2xl border space-y-4">
+                            <h4 class="text-xs font-semibold theme-text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <i data-lucide="git-merge" class="w-4 h-4 text-brand-400"></i> 自動化運作流程 (Workflow)
+                            </h4>
+                            
+                            <div class="p-3 rounded-lg theme-card border flex items-center justify-between text-xs sm:text-sm">
+                                <span class="theme-text-muted">1. POS 終端發起授權驗證</span>
+                                <span class="text-brand-400 font-mono">Verify Token</span>
+                            </div>
+                            <div class="flex justify-center theme-text-muted">
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </div>
+                            <div class="p-3 rounded-lg theme-card border flex items-center justify-between text-xs sm:text-sm">
+                                <span class="theme-text-muted">2. 用戶進行線上付款</span>
+                                <span class="text-emerald-400 font-mono">Payment Success</span>
+                            </div>
+                            <div class="flex justify-center theme-text-muted">
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </div>
+                            <div class="p-3 rounded-lg theme-card border flex items-center justify-between text-xs sm:text-sm">
+                                <span class="theme-text-muted">3. ASP.NET 後端自動更新授權</span>
+                                <span class="text-purple-400 font-mono">Auto Renewal</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- AEO & FAQ Section (AEO/GEO 結構化解答區塊) -->
+        <section id="faq" class="py-16 md:py-24 theme-card-sub border-t border-b fade-in-section">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm tracking-wider uppercase mb-2">
+                        <i data-lucide="help-circle" class="w-4 h-4"></i> FAQ & Insights
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">常見問題與專業優勢 (FAQ)</h2>
+                    <p class="theme-text-muted mt-3 text-sm sm:text-base">針對 AI 搜尋與招募常見問題的解答摘要。</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-6 rounded-2xl theme-card border">
+                        <h3 class="text-lg font-bold mb-2 flex items-center gap-2 text-brand-400">
+                            <i data-lucide="message-square-code" class="w-5 h-5"></i>
+                            Judy 的全端開發經驗與年資為何？
+                        </h3>
+                        <p class="theme-text-muted text-sm leading-relaxed">
+                            Judy 具備 4 年扎實的軟體工程師開發經驗，能熟練運用 C#、ASP.NET MVC 進行後端商業邏輯與 API 架構設計，並結合 JavaScript、HTML、CSS 建構流暢且響應式（RWD）的前端介面。
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card border">
+                        <h3 class="text-lg font-bold mb-2 flex items-center gap-2 text-brand-400">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                            在 POS 系統與線上付款領域有何具體成果？
+                        </h3>
+                        <p class="theme-text-muted text-sm leading-relaxed">
+                            Judy 曾負責維護線上授權與付款系統，主導控制 POS 軟體的權限管理。當客戶完成線上付款後，系統會透過 API 與 Webhook 機制無人值守地自動延展 POS 軟體授權，大幅提升維運效率。
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl theme-card border">
+                        <h3 class="text-lg font-bold mb-2 flex items-center gap-2 text-brand-400">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            能為團隊帶來哪些核心價值？
+                        </h3>
+                        <p class="theme-text-muted text-sm leading-relaxed">
+                            兼具商業遠見與程式碼品質，重視程式的可擴充性與資安防護，熟悉自動化與金流串接流程，能快速適應新業務需求並獨立或協作完成跨端系統部署。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Showcase Section -->
+        <section id="socials" class="py-16 md:py-24 fade-in-section">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 border-t fade-in-section">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm tracking-wider uppercase mb-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Contact Judy
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">與我建立聯繫</h2>
+                    <p class="theme-text-muted mt-3 text-sm sm:text-base">若有全端開發合作或職缺需求，歡迎隨時傳送訊息！資料將直接同步儲存至 Google 試算表。</p>
+                </div>
+
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="p-8 rounded-2xl theme-card border space-y-6 shadow-xl">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium theme-text-muted mb-2">您的姓名 / Name</label>
+                            <input type="text" id="name" required placeholder="王小明" class="w-full px-4 py-3 rounded-xl theme-card-sub border border-gray-700 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium theme-text-muted mb-2">電子郵件 / Email</label>
+                            <input type="email" id="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl theme-card-sub border border-gray-700 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium theme-text-muted mb-2">訊息內容 / Message</label>
+                        <textarea id="message" rows="4" required placeholder="請輸入您想交流的事項..." class="w-full px-4 py-3 rounded-xl theme-card-sub border border-gray-700 focus:outline-none focus:border-brand-500 transition-colors text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-all shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i> 發送訊息
+                    </button>
+                    <div id="form-message" class="hidden text-center text-sm font-medium"></div>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Audio Control Player -->
+    <div id="audio-player-widget" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 p-3 rounded-2xl theme-card border shadow-2xl backdrop-blur-md transition-all duration-300">
+        <button id="audio-toggle-btn" class="w-10 h-10 rounded-xl bg-brand-600 hover:bg-brand-500 text-white flex items-center justify-center transition-transform active:scale-95 shadow-md" aria-label="Toggle Music">
+            <i data-lucide="play" id="audio-play-icon" class="w-5 h-5"></i>
+            <i data-lucide="pause" id="audio-pause-icon" class="w-5 h-5 hidden"></i>
+        </button>
+
+        <div class="flex flex-col pr-2">
+            <div class="flex items-center gap-2 text-xs font-semibold">
+                <span>背景音樂 BGM</span>
+                <div id="audio-wave-anim" class="flex items-end gap-1 paused">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+            </div>
+            <span id="audio-status-text" class="text-[10px] theme-text-muted">點擊播放放鬆音樂</span>
+        </div>
+    </div>
+
+    <!-- Footer with Social Links -->
+    <footer class="py-12 border-t theme-card-sub theme-text-muted text-xs sm:text-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-6">
+                
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-base text-brand-400">Judy.Dev</span>
+                    <span>| 全端軟體工程師履歷網頁</span>
+                </div>
+
+                <!-- Footer Social Links -->
+                <div class="flex items-center gap-4">
+                    <a href="https://www.facebook.com/ohyeahpetsofficial" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors" title="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tseng_pets_ohyeah/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition-colors" title="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.threads.com/@tseng_pets_ohyeah" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors" title="Threads">
+                        <i data-lucide="at-sign" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@petstsengisme" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors" title="YouTube">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="text-center pt-6 border-t border-gray-800 text-[11px] sm:text-xs">
+                <p>© <span id="current-year"></span> Judy. All rights reserved. Crafted with C#, ASP.NET MVC, JavaScript, HTML & CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 初始化 Lucide 圖標
+        lucide.createIcons();
+
+        // 動態年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 深淺模式開關
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        const sunIcon = document.getElementById('theme-sun-icon');
+        const moonIcon = document.getElementById('theme-moon-icon');
+        const sunIconM = document.getElementById('theme-sun-icon-m');
+        const moonIconM = document.getElementById('theme-moon-icon-m');
+
+        function applyTheme(isLight) {
+            if (isLight) {
+                document.body.classList.add('light-mode');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                sunIconM.classList.remove('hidden');
+                moonIconM.classList.add('hidden');
+            } else {
+                document.body.classList.remove('light-mode');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                sunIconM.classList.add('hidden');
+                moonIconM.classList.remove('hidden');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme-mode');
+        applyTheme(savedTheme === 'light');
+
+        function toggleTheme() {
+            const isLightNow = document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme-mode', isLightNow ? 'light' : 'dark');
+            applyTheme(isLightNow);
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+        // 背景音樂控制
+        const bgAudio = document.getElementById('bg-audio');
+        const audioToggleBtn = document.getElementById('audio-toggle-btn');
+        const audioPlayIcon = document.getElementById('audio-play-icon');
+        const audioPauseIcon = document.getElementById('audio-pause-icon');
+        const audioWaveAnim = document.getElementById('audio-wave-anim');
+        const audioStatusText = document.getElementById('audio-status-text');
+
+        let isPlaying = false;
+
+        audioToggleBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgAudio.pause();
+                audioPlayIcon.classList.remove('hidden');
+                audioPauseIcon.classList.add('hidden');
+                audioWaveAnim.classList.add('paused');
+                audioStatusText.textContent = '已暫停';
+                isPlaying = false;
+            } else {
+                bgAudio.play().then(() => {
+                    audioPlayIcon.classList.add('hidden');
+                    audioPauseIcon.classList.remove('hidden');
+                    audioWaveAnim.classList.remove('paused');
+                    audioStatusText.textContent = '正在播放 Ambient';
+                    isPlaying = true;
+                }).catch(err => {
+                    audioStatusText.textContent = '播放失敗，請再試一次';
+                });
+            }
+        });
+
+        // 抽屜導覽列 (Mobile Menu)
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 滾動漸顯觀察器
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 聯絡表單發送處理 (串接 Google Apps Script)
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // 貼上發布好的 Google Apps Script Web App URL
+            const DEFAULT_GAS_URL = "https://script.google.com/macros/s/AKfycbw3bfRNi5RHnet3c7pPKTE6hFV2KVDocEMyCtsRrGGlPUQsn8fi7wKR6PD3dxSd33pv/exec";
+
+            const submitBtn = document.getElementById('submit-btn');
+            const formMessage = document.getElementById('form-message');
+            const gasUrl = DEFAULT_GAS_URL;
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                formMessage.className = "text-center text-sm font-medium text-red-500 mt-2";
+                formMessage.textContent = "請填寫所有欄位！";
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            // 按鈕載入狀態
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> 發送中...`;
+            lucide.createIcons();
+
+            formMessage.classList.add('hidden');
+
+            try {
+                // 使用 fetch 發送表單資料至 GAS Web App
+                const payload = { name, email, message };
+                
+                await fetch(gasUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // 避開跨域 CORS 阻擋問題
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                // 顯示成功提示
+                formMessage.className = "text-center text-sm font-medium text-emerald-500 mt-2";
+                formMessage.textContent = "感謝您的來信！訊息已成功傳送並寫入試算表。";
+                formMessage.classList.remove('hidden');
+
+                // 清空表單
+                document.getElementById('contact-form').reset();
+
+            } catch (error) {
+                console.error("提交失敗:", error);
+                formMessage.className = "text-center text-sm font-medium text-red-500 mt-2";
+                formMessage.textContent = "發送失敗，請稍後再試或檢查網路連線。";
+                formMessage.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i> 發送訊息`;
+                lucide.createIcons();
+            }
+        }
+    </script>
+</body>
+</html>
